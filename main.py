@@ -4,9 +4,22 @@ import pyautogui
 from  execute_focus import focus
 width=pyautogui.size().width
 height=pyautogui.size().height
-focusstring=["rhineland","four_year_plan"]
+
+# Focuses Elwolf
+# air_innov2.png air_innovations.png anschluss.png army_innovation1.png army_innovation2.png
+# around_maginot.png autarky.png coal_liq.png danzig.png demand_sudetenland.png
+# eastern_claims.png extra_research_slot.png fate_of_czechoslovakia.png
+# form_reichskommissariats.png four_year_plan.png gerfoc1.png gerfoc2.png
+# german_war_eco.png grosraumwirtschaft.png hermann_goring.png hungary.png
+# integrate_war_eco.png kdf_wagen.png national_focus_completed.png
+# reichsautobahn.png rhineland.png romania.png
+# strat_air.png tactical_air.png synthetic_rubber.png
+# ussr_treaty.png westwall.png
+
+defaultfocusstring=["rhineland.png","army_innovation1.png","four_year_plan.png","autarky.png","hermann_goring.png","kdf_wagen.png","extra_research_slot.png","reichsautobahn.png","anschluss.png"
+                    ,"eastern_claims.png","ussr_treaty.png","army_innovation2.png","demand_sudetenland.png","fate_of_czechoslovakia.png","westwall.png",]
 foc=focus()
-for i in focusstring:
+for i in defaultfocusstring:
     foc.addfocus(i)
     #print(foc.returnfocus())
 focuscount=0
@@ -36,7 +49,7 @@ def focus():
                 focuscount=focuscount+1
 
             except Exception as e:
-                print("nie widac "+str(focusstring[0])+".png")
+                print("nie widac "+str(defaultfocusstring[0])+".png")
             time.sleep(1)
         #     try:
         #         # pyautogui.moveTo(midle)
